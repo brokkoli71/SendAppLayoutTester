@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_main">QuickSend</string>
+    <string name="showIPTextView">Meine IP ist </string>
+    <string name="send">send</string>
+    <string name="select">select</string>
+    <string name="ip">IP</string>
+    <string name="image_view_content_description">thumbnail of data</string>
+
 </resources>

@@ -16,12 +16,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        BlankFragment blankFragment = new BlankFragment();
-        position++;
-        Bundle bundle = new Bundle();
-        bundle.putString("message", "Fragment :"+position);
-        blankFragment.setArguments(bundle);
-        return blankFragment;
+        if (position==0)
+            return new BlankFragment();
+        return new SecondFragment();
     }
 
     @Override
