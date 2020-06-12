@@ -2,12 +2,16 @@ package com.example.sendapplayouttester;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private ViewPager viewPager;
+    ViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,5 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
+
+        viewPager = findViewById(R.id.pager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
+
     }
 }
