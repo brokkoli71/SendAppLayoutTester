@@ -7,6 +7,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import me.relex.circleindicator.CircleIndicator;
+import me.relex.circleindicator.CircleIndicator3;
+
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -24,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.pager);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
+
+        CircleIndicator indicator = findViewById(R.id.indicator);
+        indicator.setViewPager(viewPager);
 
     }
 }

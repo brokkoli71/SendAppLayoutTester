@@ -9,10 +9,25 @@
 
     android:background="@drawable/background_main">
 
+
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pager"
-        />
+    />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            app:ci_drawable="@color/indigoBackground"
+            app:ci_drawable_unselected="@color/colorCircle"
+            app:ci_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
