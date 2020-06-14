@@ -14,7 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pager"
-    />
+    >
+
+
+    </androidx.viewpager.widget.ViewPager>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -28,6 +31,8 @@
             app:ci_drawable_unselected="@color/colorCircle"
             app:ci_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
