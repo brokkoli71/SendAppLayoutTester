@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="@dimen/fab_margin"
-            app:ci_drawable="@color/indigoBackground"
+            app:ci_drawable="@drawable/circle_indicator"
             app:ci_drawable_unselected="@color/colorCircle"
             app:ci_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent" />
