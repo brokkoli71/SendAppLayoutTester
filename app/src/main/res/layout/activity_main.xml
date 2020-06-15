@@ -32,6 +32,18 @@
             app:ci_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent" />
 
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:checked="true"
+            android:drawableStart="@drawable/ic_wifi"
+            android:text="same"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.32999998" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
