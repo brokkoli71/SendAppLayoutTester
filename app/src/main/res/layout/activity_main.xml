@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:fitsSystemWindows="true"
-
     android:background="@drawable/background_main">
 
 
@@ -14,10 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pager"
-    >
-
-
-    </androidx.viewpager.widget.ViewPager>
+        android:paddingTop="36dp"
+    />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -34,12 +31,14 @@
 
         <Switch
             android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="29dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_width="131dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="@dimen/fab_margin"
             android:background="@drawable/switch_background"
             android:checked="true"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:drawableStart="@drawable/ic_wifi"
             android:text="same"
             app:layout_constraintEnd_toEndOf="parent"
