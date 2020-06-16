@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BlankFragment"
-    tools:showIn="@layout/activity_main"
     android:padding="@dimen/fab_margin"
     >
 
     <include
         layout="@layout/fragment_blank_content"/>
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/arrow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
