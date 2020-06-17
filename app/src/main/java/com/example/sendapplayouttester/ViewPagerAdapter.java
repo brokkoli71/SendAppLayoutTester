@@ -6,19 +6,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
+    ViewPager viewPager;
 
-    public ViewPagerAdapter(@NonNull FragmentManager fm) {
+    public ViewPagerAdapter(@NonNull FragmentManager fm, ViewPager viewPager) {
         super(fm);
+        this.viewPager = viewPager;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
         if (position==0)
-            return new BlankFragment();
-        return new SecondFragment();
+            return new BlankFragment(viewPager);
+        return new SecondFragment(viewPager);
     }
 
     @Override

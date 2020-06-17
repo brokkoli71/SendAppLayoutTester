@@ -29,37 +29,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         viewPager = findViewById(R.id.pager);
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), viewPager);
         viewPager.setAdapter(viewPagerAdapter);
 
         CircleIndicator indicator = findViewById(R.id.indicator);
         indicator.setViewPager(viewPager);
 
-        final ImageView arrow1 =  findViewById(R.id.arrow1);
-        ImageView arrow2 = findViewById(R.id.arrow2);
-        arrow2.setImageAlpha(0);
-
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                if (position == 1){
-                    Animation fadeIn = new AlphaAnimation(0, 1);
-                    fadeIn.setInterpolator(new DecelerateInterpolator());
-                    fadeIn.setDuration(1000);
-                    arrow1.setAnimation(fadeIn);
-                }
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
     }
 }
