@@ -35,8 +35,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
-            android:stretchColumns="1">
-            >
+            android:stretchColumns="*">
+
             <TableRow>
                 <Switch
                     android:id="@+id/switch1"
@@ -54,7 +54,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button_send_view"
+                    android:id="@+id/button_swap_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginRight="@dimen/fab_margin"
@@ -62,21 +62,10 @@
                     android:checked="true"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="Send"
+                    android:text="send"
                     app:layout_constraintEnd_toStartOf="@+id/switch1"
                     app:layout_constraintTop_toTopOf="parent" />
-                <Button
-                    android:id="@+id/button_receive_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="@dimen/fab_margin"
-                    android:background="@drawable/switch_background"
-                    android:checked="true"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="Send"
-                    app:layout_constraintEnd_toStartOf="@+id/switch1"
-                    app:layout_constraintTop_toTopOf="parent" />
+
 
             </TableRow>
         </TableLayout>
