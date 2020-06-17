@@ -36,8 +36,9 @@ public class BlankFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
 
-        final ImageView arrow1 =  view.findViewById(R.id.arrow1);
+        ((ImageView) view.findViewById(R.id.imageView)).setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
 
+        final ImageView arrow1 =  view.findViewById(R.id.arrow1);
         final ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
                 arrow1,
                 PropertyValuesHolder.ofFloat("translationX", 5),

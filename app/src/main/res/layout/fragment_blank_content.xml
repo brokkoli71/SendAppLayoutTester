@@ -50,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <ImageView
+
         android:id="@+id/imageView"
         android:layout_width="@dimen/inner_content_width"
         android:layout_height="wrap_content"
