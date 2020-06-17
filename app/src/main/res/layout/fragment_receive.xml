@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlankFragment"
+    tools:context=".ReceiveFragment"
     android:padding="@dimen/fab_margin"
     >
 
     <include
-        layout="@layout/fragment_blank_content"/>
+        layout="@layout/fragment_receive_content"/>
     <ImageView
         android:id="@+id/arrow1"
         android:layout_width="wrap_content"

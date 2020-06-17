@@ -21,8 +21,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position==0)
-            return new BlankFragment(viewPager);
-        return new SecondFragment(viewPager);
+            return new ReceiveFragment(viewPager);
+        return new SendFragment(viewPager);
     }
 
     @Override

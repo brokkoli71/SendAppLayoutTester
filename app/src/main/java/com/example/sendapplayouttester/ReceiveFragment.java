@@ -7,25 +7,20 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment extends Fragment {
+public class ReceiveFragment extends Fragment {
     ViewPager viewPager;
 
-    public BlankFragment(ViewPager viewPager) {
+    public ReceiveFragment(ViewPager viewPager) {
         this.viewPager = viewPager;
     }
 
@@ -34,7 +29,7 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_blank, container, false);
+        View view = inflater.inflate(R.layout.fragment_receive, container, false);
 
         ((ImageView) view.findViewById(R.id.imageView)).setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
 

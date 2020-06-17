@@ -10,11 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class SecondFragment extends Fragment {
+public class SendFragment extends Fragment {
 
     ViewPager viewPager;
 
-    public SecondFragment(ViewPager viewPager) {
+    public SendFragment(ViewPager viewPager) {
         this.viewPager = viewPager;
     }
 
@@ -29,7 +29,7 @@ public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
+        View view = inflater.inflate(R.layout.fragment_send, container, false);
 
         ((ImageView) view.findViewById(R.id.imageView2)).setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
         return view;
