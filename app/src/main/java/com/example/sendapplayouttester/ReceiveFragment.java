@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 /**
@@ -31,7 +32,9 @@ public class ReceiveFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_receive, container, false);
 
-        ((ImageView) view.findViewById(R.id.imageView)).setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
+        ImageView imageView =  view.findViewById(R.id.imageView);
+
+        imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
 
         final ImageView arrow1 =  view.findViewById(R.id.arrow1);
         final ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
