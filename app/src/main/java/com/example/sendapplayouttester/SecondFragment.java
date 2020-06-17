@@ -34,4 +34,5 @@ public class SecondFragment extends Fragment {
         ((ImageView) view.findViewById(R.id.imageView2)).setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
         return view;
     }
+
 }
