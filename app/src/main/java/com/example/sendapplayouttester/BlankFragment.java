@@ -31,7 +31,7 @@ public class BlankFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
@@ -41,7 +41,7 @@ public class BlankFragment extends Fragment {
         final ImageView arrow1 =  view.findViewById(R.id.arrow1);
         final ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
                 arrow1,
-                PropertyValuesHolder.ofFloat("translationX", 5),
+                PropertyValuesHolder.ofFloat("translationX", 15),
                 PropertyValuesHolder.ofFloat("alpha", 0.4f));
                 //PropertyValuesHolder.ofFloat("scaleX", 1.2f),
                 //PropertyValuesHolder.ofFloat("scaleY", 1.2f));
@@ -53,13 +53,21 @@ public class BlankFragment extends Fragment {
 
         scaleDown.start();
 
+        arrow1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(1,true);
+                arrow1.setVisibility(View.GONE);
+            }
+        });
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (positionOffset > 0.5){
-                    arrow1.setImageAlpha(0);
                     scaleDown.cancel();
                     viewPager.removeOnPageChangeListener(this);
+                    arrow1.setVisibility(View.GONE);
                 }
             }
 
