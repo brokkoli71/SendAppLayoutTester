@@ -11,13 +11,4 @@
     <include
         layout="@layout/fragment_second_content"/>
 
-    <ImageView
-        android:id="@+id/arrow2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:rotation="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_forward" />
 </androidx.constraintlayout.widget.ConstraintLayout>

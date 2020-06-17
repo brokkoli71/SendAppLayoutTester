@@ -1,5 +1,7 @@
 package com.example.sendapplayouttester;
 
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
@@ -35,22 +38,33 @@ public class BlankFragment extends Fragment {
 
         final ImageView arrow1 =  view.findViewById(R.id.arrow1);
 
+        final ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
+                arrow1,
+                PropertyValuesHolder.ofFloat("translationX", 5),
+                PropertyValuesHolder.ofFloat("alpha", 0.4f));
+                //PropertyValuesHolder.ofFloat("scaleX", 1.2f),
+                //PropertyValuesHolder.ofFloat("scaleY", 1.2f));
+        scaleDown.setDuration(700);
+
+        scaleDown.setRepeatCount(ObjectAnimator.INFINITE);
+        scaleDown.setRepeatMode(ObjectAnimator.REVERSE);
+        scaleDown.setInterpolator(new AccelerateDecelerateInterpolator());
+
+        scaleDown.start();
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Log.w("position", position+","+positionOffset+","+positionOffsetPixels);
+                if (positionOffset > 0.5){
+                    arrow1.setImageAlpha(0);
+                    scaleDown.cancel();
+                    viewPager.removeOnPageChangeListener(this);
+                }
             }
 
             @Override
             public void onPageSelected(int position) {
                 //Toast.makeText(BlankFragment.super.getContext(), ""+position, Toast.LENGTH_LONG).show();
-                if (position == 0){
-                    arrow1.setImageAlpha(0);
-                    Animation fadeIn = new AlphaAnimation(1, 0);
-                    fadeIn.setInterpolator(new DecelerateInterpolator());
-                    fadeIn.setDuration(1000);
-                    arrow1.setAnimation(fadeIn);
-                }
             }
 
             @Override
