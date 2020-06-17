@@ -13,8 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pager"
-        android:paddingTop="36dp"
-    />
+        android:paddingTop="36dp">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -35,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
-            android:stretchColumns="*">
+            android:stretchColumns="1">
 
             <TableRow>
                 <Switch
@@ -53,9 +56,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/button_swap_fragment"
-                    android:layout_width="match_parent"
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="216dp"
                     android:layout_height="match_parent"
                     android:layout_marginRight="@dimen/fab_margin"
                     android:background="@drawable/switch_background"
@@ -64,7 +67,20 @@
                     android:paddingEnd="10dp"
                     android:text="send"
                     app:layout_constraintEnd_toStartOf="@+id/switch1"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="RECEIVE" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="SEND" />
+
+                </com.google.android.material.tabs.TabLayout>
 
 
             </TableRow>

@@ -15,6 +15,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.android.material.tabs.TabLayout;
+
 import me.relex.circleindicator.CircleIndicator;
 import me.relex.circleindicator.CircleIndicator3;
 
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), viewPager);
         viewPager.setAdapter(viewPagerAdapter);
 
-        final Button buttonSwapFragment = findViewById(R.id.button_swap_fragment);
+        /*final Button buttonSwapFragment = findViewById(R.id.button_swap_fragment);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -67,9 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 currentFragmentActive = 1-currentFragmentActive;
                 viewPager.setCurrentItem(currentFragmentActive,true);
             }
-        });
+        });*/
 
-
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
         CircleIndicator indicator = findViewById(R.id.indicator);
         indicator.setViewPager(viewPager);
 
