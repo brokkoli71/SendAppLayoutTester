@@ -5,10 +5,12 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class SendFragment extends Fragment {
 
@@ -27,11 +29,18 @@ public class SendFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_send, container, false);
+        final View view = inflater.inflate(R.layout.fragment_send, container, false);
 
-        ((ImageView) view.findViewById(R.id.imageView2)).setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
+        ImageView imageView = ((ImageView) view.findViewById(R.id.imageView2));
+        imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.w("hk","kl");
+            }
+        });
         return view;
     }
 
