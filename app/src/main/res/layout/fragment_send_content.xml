@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/button_send"
+        android:id="@+id/button_send_id"
         android:layout_width="@dimen/inner_content_width"
         android:layout_height="100dp"
         android:layout_marginBottom="72dp"
@@ -39,7 +39,7 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/imageView_text"
+        android:id="@+id/imageViewText"
         android:layout_width="@dimen/inner_content_width"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_folder_open"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button_select"
+        android:id="@+id/button_send_qr"
         android:layout_width="@dimen/inner_content_width"
         android:layout_height="100dp"
         android:layout_marginBottom="@dimen/fab_margin"
@@ -68,7 +68,7 @@
         android:paddingEnd="26dip"
         android:text="qr-send"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_send"
+        app:layout_constraintBottom_toTopOf="@+id/button_send_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

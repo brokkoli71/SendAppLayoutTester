@@ -9,7 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SendFragment extends Fragment {
@@ -33,12 +35,22 @@ public class SendFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_send, container, false);
 
-        ImageView imageView = ((ImageView) view.findViewById(R.id.imageView2));
-        imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
+        final ImageView imageView =  view.findViewById(R.id.imageView2);
+        final TextView imageViewText =  view.findViewById(R.id.imageViewText);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.w("hk","kl");
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_data_placeholder));
+                imageViewText.setVisibility(View.GONE);
+                imageView.setOnClickListener(null);
+            }
+        });
+
+        Button buttonQR = view.findViewById(R.id.button_send_qr);
+        buttonQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View e) {
+
             }
         });
         return view;
