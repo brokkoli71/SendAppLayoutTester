@@ -23,7 +23,6 @@ public class SendFragment extends Fragment {
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +34,8 @@ public class SendFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_send, container, false);
 
-        final ImageView imageView =  view.findViewById(R.id.imageView2);
-        final TextView imageViewText =  view.findViewById(R.id.imageViewText);
+        final ImageView imageView = view.findViewById(R.id.imageView2);
+        final TextView imageViewText = view.findViewById(R.id.imageViewText);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,5 +54,4 @@ public class SendFragment extends Fragment {
         });
         return view;
     }
-
 }

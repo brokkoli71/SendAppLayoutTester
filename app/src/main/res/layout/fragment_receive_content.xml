@@ -7,57 +7,49 @@
     android:background="@drawable/content_shape"
     >
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="KEY"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--android:background="@drawable/image_view_neumorph"-->
+
 
     <Button
         android:id="@+id/button_receive"
         android:layout_width="@dimen/inner_content_width"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/button"
         android:drawableStart="@drawable/ic_send"
         android:paddingStart="30dip"
         android:paddingEnd="26dip"
-        android:text="@string/receive"
+        android:text="enter id"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"/>
-    <!--android:background="@drawable/button_neumorph"
-            style="?android:attr/borderlessButtonStyle"
-            android:textColor="@color/indigoBackground"-->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text=""
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_qr_generate"
+        android:layout_width="@dimen/inner_content_width"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:background="@drawable/button"
+        android:drawableStart="@drawable/ic_qr_code"
+        android:paddingStart="30dip"
+        android:paddingEnd="26dip"
+        android:text="generate qr"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_receive"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="@dimen/inner_content_width"
         android:layout_height="wrap_content"
-        android:minHeight="150dp"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:background="@drawable/image_view"
+        android:contentDescription="@string/image_view_content_description"
+        android:minHeight="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:contentDescription="@string/image_view_content_description"
-        android:background="@drawable/image_view"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
