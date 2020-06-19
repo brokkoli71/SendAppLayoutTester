@@ -14,6 +14,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.zxing.qrcode.QRCodeWriter;
+
 public class ReceiveFragment extends Fragment {
     ViewPager viewPager;
 
@@ -59,6 +61,8 @@ public class ReceiveFragment extends Fragment {
 
             }
         });
+
+
         return view;
     }
 
