@@ -9,9 +9,9 @@
     android:layout_gravity="center">
 
     <ImageView
+        android:id="@+id/qr_image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foreground="@drawable/ic_qr_code"
         android:background="@android:color/white"
         />
 

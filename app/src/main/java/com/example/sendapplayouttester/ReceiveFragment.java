@@ -3,6 +3,7 @@ package com.example.sendapplayouttester;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.Dialog;
+import android.app.SharedElementCallback;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -22,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.zxing.qrcode.QRCodeWriter;
+
+import net.glxn.qrgen.android.QRCode;
 
 public class ReceiveFragment extends Fragment {
     ViewPager viewPager;
@@ -72,14 +75,17 @@ public class ReceiveFragment extends Fragment {
 
         qrDialog = new Dialog(container.getContext());
 
+        final String qrContent = "testetsdflkdklfsmdvclkmsvclkmsdvlkmsdlkvmsldkmvlksdmvlksmdvklmsdvlkmsdlkvcm";
         final Button qrButton = view.findViewById(R.id.button_qr_generate);
         qrButton.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 qrDialog.setContentView(R.layout.dialog_qr);
                 qrDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 qrDialog.show();
+                ImageView qrImageView = qrDialog.findViewById(R.id.qr_image_view);
+                qrImageView.setImageBitmap(QRCode.from(qrContent).withSize(500, 500).bitmap());
             }
         });
         return view;
