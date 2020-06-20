@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.Dialog;
 import android.app.SharedElementCallback;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -32,6 +33,8 @@ import net.glxn.qrgen.android.QRCode;
 public class ReceiveFragment extends Fragment {
     ViewPager viewPager;
     Dialog qrDialog;
+    Context context;
+    String receiveID;
 
     public ReceiveFragment(ViewPager viewPager) {
         this.viewPager = viewPager;
@@ -41,7 +44,7 @@ public class ReceiveFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-
+        context = container.getContext();
         View view = inflater.inflate(R.layout.fragment_receive, container, false);
 
         final ImageView arrow1 =  view.findViewById(R.id.arrow1);
@@ -91,6 +94,22 @@ public class ReceiveFragment extends Fragment {
                 qrImageView.setImageBitmap(QRCode.from(qrContent).withSize(500, 500).bitmap());
             }
         });
+
+        Button buttonReceiveID = view.findViewById(R.id.button_receive);
+        buttonReceiveID.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new InputDialog(context) {
+                    @Override
+                    public void onResult(String result) {
+                        receiveID = result;
+                        Log.w("send_id", "key:" + receiveID);
+                        Toast.makeText(context, receiveID, Toast.LENGTH_LONG).show();
+                    }
+                };
+            }
+        });
+
         return view;
     }
 
