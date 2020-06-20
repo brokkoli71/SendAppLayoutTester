@@ -11,6 +11,8 @@ import androidx.viewpager.widget.ViewPager;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     ViewPager viewPager;
+    SendFragment sendFragment;
+    ReceiveFragment receiveFragment;
 
     public ViewPagerAdapter(@NonNull FragmentManager fm, ViewPager viewPager) {
         super(fm);
@@ -20,9 +22,12 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        if (position==0)
-            return new ReceiveFragment(viewPager);
-        return new SendFragment(viewPager);
+        if (position==0){
+            receiveFragment = new ReceiveFragment(viewPager);
+            return receiveFragment;
+        }
+        sendFragment = new SendFragment(viewPager);
+        return sendFragment;
     }
 
     @Override

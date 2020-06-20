@@ -1,5 +1,7 @@
 package com.example.sendapplayouttester;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,8 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SendFragment extends Fragment {
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
+public class SendFragment extends Fragment {
+    Context context;
     ViewPager viewPager;
 
     public SendFragment(ViewPager viewPager) {
@@ -32,6 +37,7 @@ public class SendFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
+        this.context = container.getContext();
         final View view = inflater.inflate(R.layout.fragment_send, container, false);
 
         final ImageView imageView = view.findViewById(R.id.imageView2);
@@ -49,9 +55,31 @@ public class SendFragment extends Fragment {
         buttonQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View e) {
-
+                IntentIntegrator integrator = new IntentIntegrator(SendFragment.this.getActivity());
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+                integrator.setPrompt("Scan");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setBarcodeImageEnabled(false);
+                integrator.initiateScan();
+                integrator.setOrientationLocked(true);
+                Log.w("scan", integrator.toString());
             }
         });
         return view;
     }
+
+    void onReceiveQR(IntentResult result){
+        if(result.getContents() == null) {
+            Log.e("Scan", "Cancelled scan");
+
+        } else {
+            Log.w("Scan", "Scanned: "+ result.getContents());
+
+            Toast.makeText(context, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 }
+
