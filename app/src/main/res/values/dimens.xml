@@ -3,4 +3,5 @@
     <dimen name="round_corners">15dp</dimen>
     <dimen name="min_whitespace">32dp</dimen>
     <dimen name="inner_content_width">250dp</dimen>
+    <dimen name="popup_content_width">350dp</dimen>
 </resources>

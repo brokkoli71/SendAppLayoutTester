@@ -78,8 +78,7 @@ public class ReceiveFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 qrDialog.setContentView(R.layout.dialog_qr);
-                Drawable backgroundDrawable = new ColorDrawable(Color.argb(0.1f, 1f, 1f, 1f));
-                qrDialog.getWindow().setBackgroundDrawable(backgroundDrawable);
+                qrDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 qrDialog.show();
             }
         });
