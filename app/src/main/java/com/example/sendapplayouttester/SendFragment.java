@@ -45,7 +45,7 @@ public class SendFragment extends Fragment {
             }
         });
 
-        Button buttonQR = view.findViewById(R.id.button_send_qr);
+        final Button buttonQR = view.findViewById(R.id.button_send_qr);
         buttonQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View e) {

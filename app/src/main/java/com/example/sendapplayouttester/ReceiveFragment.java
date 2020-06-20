@@ -2,8 +2,14 @@ package com.example.sendapplayouttester;
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -11,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +25,7 @@ import com.google.zxing.qrcode.QRCodeWriter;
 
 public class ReceiveFragment extends Fragment {
     ViewPager viewPager;
+    Dialog qrDialog;
 
     public ReceiveFragment(ViewPager viewPager) {
         this.viewPager = viewPager;
@@ -62,7 +70,19 @@ public class ReceiveFragment extends Fragment {
             }
         });
 
+        qrDialog = new Dialog(container.getContext());
 
+        final Button qrButton = view.findViewById(R.id.button_qr_generate);
+        qrButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                qrDialog.setContentView(R.layout.dialog_qr);
+                Drawable backgroundDrawable = new ColorDrawable(Color.argb(0.1f, 1f, 1f, 1f));
+                qrDialog.getWindow().setBackgroundDrawable(backgroundDrawable);
+                qrDialog.show();
+            }
+        });
         return view;
     }
 
